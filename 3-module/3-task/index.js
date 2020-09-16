@@ -12,6 +12,5 @@ function camelize(str) {
     newArr.push(item);
     return item;
   });
-  console.log(newArr.join(''));
   return newArr.join('');
 }
