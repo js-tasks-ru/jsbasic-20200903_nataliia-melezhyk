@@ -18,7 +18,7 @@ function initCarousel() {
 
   btnLeft.addEventListener('click', function(){
     let currentValue = window.getComputedStyle(innerBox).getPropertyValue('transform').match(/(-?[0-9\.]+)/g)[4];
-    if(current > 0 ){
+    if(current > 0){
       if(current != 1) btnRight.style.display = '';
       innerBox.style.transform = 'translateX(' + (+currentValue +  widthSilde) + 'px)';      
     }
