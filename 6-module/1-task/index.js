@@ -31,11 +31,9 @@
 export default class UserTable {
   constructor(rows) {
     this.rows = rows;
-    console.log('1');
     const table = this.createTable();
     const body = this.createTableBody(rows);
     table.append(body);
-
     this.elem = table;
   }
   
@@ -44,7 +42,6 @@ export default class UserTable {
     const thead = document.createElement('thead');
     thead.innerHTML= "<tr><th>Имя</th><th>Возраст</th><th>Зарплата</th><th>Город</th><th></th></tr>";
     table.append(thead);
-
     return table;
   }
 
