@@ -30,5 +30,41 @@
  */
 export default class UserTable {
   constructor(rows) {
+    this.rows = rows;
+    const table = this.createTable();
+    const body = this.createTableBody(rows);
+    table.append(body);
+    this.elem = table;
+  }
+  
+  createTable(){
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    thead.innerHTML= "<tr><th>Имя</th><th>Возраст</th><th>Зарплата</th><th>Город</th><th></th></tr>";
+    table.append(thead);
+    return table;
+  }
+
+  createTableBody(rows){
+    const tbody = document.createElement('tbody');
+    rows.forEach(element => {
+      const tr = document.createElement('tr');
+      for(let key in element){
+        const td = document.createElement('td');
+        td.innerHTML = element[key];
+        tr.append(td);
+      }
+      const tdLast = document.createElement('td');
+      const btnRemove = document.createElement('button');
+      btnRemove.addEventListener('click', function(event){
+        tr.remove();
+      })
+      btnRemove.className = 'btnRemove';
+      btnRemove.innerHTML = 'X';
+      tdLast.append(btnRemove);
+      tr.append(tdLast);
+      tbody.append(tr);
+    });
+    return tbody;
   }
 }
