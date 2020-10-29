@@ -185,6 +185,7 @@ describe('8-module-1-task', () => {
           cartIcon.update(cart);
 
           window.scrollTo(0, document.documentElement.scrollHeight);
+
         });
 
         it('иконка должна быть спозиционирована фиксированно', (done) => {
